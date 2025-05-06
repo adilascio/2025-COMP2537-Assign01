@@ -1,0 +1,30 @@
+{
+  "name": "assignment01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "connect-mongo": "^5.1.0",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "express-session": "^1.18.1",
+    "joi": "^17.13.3",
+    "mongoose": "^8.14.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adilascio/2025-COMP2537-Assign01.git"
+  },
+  "bugs": {
+    "url": "https://github.com/adilascio/2025-COMP2537-Assign01/issues"
+  },
+  "homepage": "https://github.com/adilascio/2025-COMP2537-Assign01#readme"
+}
