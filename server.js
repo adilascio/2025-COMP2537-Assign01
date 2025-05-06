@@ -110,7 +110,7 @@ app.post('/login', async (req, res) => {
 
     const user = await userCollection.findOne({ email: value.email });
     if (!user || !(await bcrypt.compare(value.password, user.password))) {
-        return res.send('Invalid email or password. <a href="/login">Try again</a>');
+        return res.send('Invalid password. <a href="/login">Try again</a>');
     }
 
     req.session.authenticated = true;
