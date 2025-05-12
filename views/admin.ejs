@@ -1,0 +1,31 @@
+<%- include('templates/header', { pageTitle: 'Admin', activeTab: 'admin' }) %>
+
+<div class="container my-4">
+  <h1>Site Administration</h1>
+
+  <!-- Optional inline “not authorized” message; your middleware already sets 403 -->
+  <% if (typeof users === 'undefined') { %>
+    <div class="alert alert-danger">You are not authorized to view this page.</div>
+  <% } else { %>
+
+    <!-- Users Table -->
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Role</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% users.forEach(user => { %>
+          <%- include('templates/user', { user: user }) %>
+        <% }) %>
+      </tbody>
+    </table>
+
+  <% } %>
+</div>
+
+<%- include('templates/footer') %>

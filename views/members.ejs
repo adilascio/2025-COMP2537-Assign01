@@ -1,0 +1,37 @@
+<%- include('templates/header', {
+     pageTitle: 'Members Only',
+     activeTab: 'members'
+}) %>
+
+<h1>Members Only</h1>
+<p>Hello, <%= name %>!</p>
+
+<%
+  const pics = [
+    '/images/cat1.jpg',
+    '/images/cat2.webp',
+    '/images/cat3.jpg',
+    '/images/cat4.jpg'
+  ];
+  const selected = [];
+  while (selected.length < 3) {
+    const pick = pics[Math.floor(Math.random() * pics.length)];
+    if (!selected.includes(pick)) selected.push(pick);
+  }
+%>
+
+<div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+  <% selected.forEach(src => { %>
+    <div class="col">
+      <div style="width:100%; height:200px; overflow:hidden; border-radius:0.25rem;">
+        <img src="<%= src %>"
+             alt="Random image"
+             style="width:100%; height:100%; object-fit:cover;">
+      </div>
+    </div>
+  <% }) %>
+</div>
+
+<a href="/logout" class="btn btn-outline-secondary">Log Out</a>
+
+<%- include('templates/footer') %>
